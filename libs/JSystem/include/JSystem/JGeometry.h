@@ -403,8 +403,9 @@ struct TVec3<f32> : public Vec {
         return JMathInlineVEC::C_VECDotProduct(this, &other);
     }
 
-    void cubic(const TVec3<f32>& param_1, const TVec3<f32>& param_2, const TVec3<f32>& param_3,
-               const TVec3<f32>& param_4, f32 param_5) {
+    template <class U>
+    void cubic(const TVec3<U>& param_1, const TVec3<U>& param_2, const TVec3<U>& param_3,
+               const TVec3<U>& param_4, U param_5) {
         f32 fVar5 = param_5 * param_5;
         f32 fVar6 = fVar5 * param_5;
         f32 fVar8 = 1.0f + (2.0f * fVar6 - 3.0f * fVar5);
